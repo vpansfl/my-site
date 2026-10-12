@@ -24,7 +24,7 @@ if ("IntersectionObserver" in window) {
         }
       });
     },
-    { threshold: 0.15 }
+    { threshold: 0.2 }
   );
 
   sections.forEach((section) => {
