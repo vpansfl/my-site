@@ -1,0 +1,14 @@
+# 환경 변수 파일 (비밀 값 포함)
+.env
+.env.*
+!.env.example
+
+# 로그
+*.log
+
+# OS가 자동으로 만드는 파일
+.DS_Store
+Thumbs.db
+
+# 의존성 폴더
+node_modules/
