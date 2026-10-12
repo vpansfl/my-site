@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="홍길동의 자기소개 페이지">
+  <title>홍길동 | 자기소개</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="name">홍길동</h1>
+      <p class="tagline">배우는 것을 즐기는 개발자, 홍길동입니다.</p>
+      <nav class="nav">
+        <a href="#about">소개</a>
+        <a href="#likes">좋아하는 것</a>
+        <a href="#footer">연락처</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title">소개</h2>
+        <p>
+          안녕하세요. 새로운 것을 만들고 직접 확인하는 과정을 좋아합니다.
+          작은 아이디어라도 실제로 동작하는 결과물로 만들어 보는 것을 중요하게 생각합니다.
+        </p>
+        <p>
+          지금은 웹 기술을 중심으로 공부하고 있으며, 꾸준히 배우고 기록하는 습관을 가지려 노력하고 있습니다.
+        </p>
+      </div>
+    </section>
+
+    <section id="likes" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">좋아하는 것</h2>
+        <ul class="likes-grid">
+          <li class="like-card">
+            <span class="like-icon" aria-hidden="true">📚</span>
+            <h3>독서</h3>
+            <p>다양한 분야의 책을 읽으며 생각의 폭을 넓히는 시간을 좋아합니다.</p>
+          </li>
+          <li class="like-card">
+            <span class="like-icon" aria-hidden="true">🎵</span>
+            <h3>음악 감상</h3>
+            <p>작업할 때도, 쉴 때도 늘 음악과 함께합니다.</p>
+          </li>
+          <li class="like-card">
+            <span class="like-icon" aria-hidden="true">☕</span>
+            <h3>커피</h3>
+            <p>조용한 카페에서 커피 한 잔과 함께 생각을 정리하는 것을 좋아합니다.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> 홍길동. All rights reserved.</p>
+      <p>이메일: <a href="mailto:hong@example.com">hong@example.com</a></p>
+      <button type="button" class="top-button" id="top-button">맨 위로 ↑</button>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
