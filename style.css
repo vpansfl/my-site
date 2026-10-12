@@ -72,7 +72,7 @@ main {
 .site-header {
   padding: 80px 0 48px;
   text-align: center;
-  background: linear-gradient(135deg, var(--accent-soft), var(--bg));
+  background: linear-gradient(135deg, #ffe3ec 0%, #e3dcff 50%, #d6eaff 100%);
   border-bottom: 1px solid var(--border);
 }
 
