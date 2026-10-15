@@ -9,6 +9,7 @@
   --border: #ebe5f5;
   --radius: 12px;
   --shadow: 0 4px 16px rgba(142, 134, 224, 0.12);
+  --header-bg: linear-gradient(135deg, #ffe3ec 0%, #e3dcff 50%, #d6eaff 100%);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,6 +23,7 @@
     --card-bg: #2b2b45;
     --border: #3a3a58;
     --shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+    --header-bg: linear-gradient(135deg, #3a2d48 0%, #2e2a4f 50%, #23324a 100%);
   }
 }
 
@@ -35,6 +37,7 @@
   --card-bg: #2b2b45;
   --border: #3a3a58;
   --shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  --header-bg: linear-gradient(135deg, #3a2d48 0%, #2e2a4f 50%, #23324a 100%);
 }
 
 * {
@@ -72,7 +75,7 @@ main {
 .site-header {
   padding: 80px 0 48px;
   text-align: center;
-  background: linear-gradient(135deg, #ffe3ec 0%, #e3dcff 50%, #d6eaff 100%);
+  background: var(--header-bg);
   border-bottom: 1px solid var(--border);
 }
 
@@ -221,6 +224,30 @@ main {
 .top-button:focus-visible {
   border-color: var(--accent);
   color: var(--accent);
+  outline: none;
+}
+
+/* 다크모드 토글 버튼 (script.js) */
+.theme-toggle {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 10;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--card-bg);
+  box-shadow: var(--shadow);
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  border-color: var(--accent);
   outline: none;
 }
 
