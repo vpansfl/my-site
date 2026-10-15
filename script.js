@@ -32,3 +32,57 @@ if ("IntersectionObserver" in window) {
     observer.observe(section);
   });
 }
+
+// 다크모드 토글 (선택한 테마는 localStorage에 저장)
+const THEME_KEY = "theme";
+const root = document.documentElement;
+const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+function getSavedTheme() {
+  try {
+    return localStorage.getItem(THEME_KEY);
+  } catch (e) {
+    return null;
+  }
+}
+
+function saveTheme(theme) {
+  try {
+    localStorage.setItem(THEME_KEY, theme);
+  } catch (e) {
+    // 저장할 수 없는 환경이면 이번 방문에만 적용
+  }
+}
+
+function currentTheme() {
+  return root.dataset.theme || (darkQuery.matches ? "dark" : "light");
+}
+
+const themeButton = document.createElement("button");
+themeButton.type = "button";
+themeButton.className = "theme-toggle";
+
+function updateThemeButton() {
+  const isDark = currentTheme() === "dark";
+  themeButton.textContent = isDark ? "☀️" : "🌙";
+  themeButton.setAttribute("aria-label", isDark ? "라이트 모드로 전환" : "다크 모드로 전환");
+  themeButton.setAttribute("aria-pressed", String(isDark));
+}
+
+const savedTheme = getSavedTheme();
+if (savedTheme === "light" || savedTheme === "dark") {
+  root.dataset.theme = savedTheme;
+}
+
+themeButton.addEventListener("click", () => {
+  const next = currentTheme() === "dark" ? "light" : "dark";
+  root.dataset.theme = next;
+  saveTheme(next);
+  updateThemeButton();
+});
+
+// 저장된 선택이 없을 때는 시스템 설정 변경을 따라감
+darkQuery.addEventListener("change", updateThemeButton);
+
+updateThemeButton();
+document.body.appendChild(themeButton);
